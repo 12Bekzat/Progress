@@ -11,8 +11,7 @@
             <SolidColorBrush Color="#FF252526"/>
         </Grid.Background>
         <Rectangle x:Name="background" Fill="#FF4493E0" Height="50"/>
-        <Rectangle x:Name="firstLoading" Fill="Blue" Height="50" Width="50"  HorizontalAlignment="Left"/>
-        <Rectangle x:Name="secondLoading" Fill="#FF4493E0" Height="50" Width="0" HorizontalAlignment="Left"/>
-        <Button Content="Button" Background="#FF252526" Foreground="DodgerBlue" HorizontalAlignment="Left" Margin="357,149,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Rectangle x:Name="firstLoading" Fill="Blue" Height="50" Width="100"  HorizontalAlignment="Left" Margin="0 0 0 0"/>
+        <Button Content="Button" Background="#FF252526" Foreground="DodgerBlue" HorizontalAlignment="Left" Margin="357,149,0,0" VerticalAlignment="Top" Click="LoadProgressBar"/>
     </Grid>
 </Window>

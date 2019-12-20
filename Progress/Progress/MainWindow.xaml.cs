@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,26 +27,14 @@ namespace Progress
             InitializeComponent();
         }
 
-        private void LoadProgressBar()
+        private void LoadProgressBar(object sender, RoutedEventArgs e)
         {
-            DoubleAnimation animationFirst = new DoubleAnimation();
-            animationFirst.From = firstLoading.ActualWidth;
-            animationFirst.To = ActualWidth;
-            animationFirst.Duration = TimeSpan.FromSeconds(10);
-            animationFirst.RepeatBehavior = RepeatBehavior.Forever;
-            firstLoading.BeginAnimation(Rectangle.WidthProperty, animationFirst);
-
-            DoubleAnimation secondAnimation = new DoubleAnimation();
-            secondAnimation.From = secondLoading.ActualWidth;
-            secondAnimation.To = ActualWidth;
-            secondAnimation.Duration = TimeSpan.FromSeconds(10);
-            secondAnimation.RepeatBehavior = RepeatBehavior.Forever;
-            secondLoading.BeginAnimation(Rectangle.WidthProperty, secondAnimation);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            LoadProgressBar();
+            ThicknessAnimation animation = new ThicknessAnimation();
+            animation.From = new Thickness(-100, 0, 0, 0);
+            animation.To = new Thickness(400, 0, 0, 0);
+            animation.Duration = TimeSpan.FromSeconds(2);
+            animation.RepeatBehavior = RepeatBehavior.Forever;
+            firstLoading.BeginAnimation(MarginProperty, animation);
         }
     }
 }
